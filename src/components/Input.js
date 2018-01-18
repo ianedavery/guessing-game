@@ -9,7 +9,7 @@ export default function Input(props) {
 			</fieldset>
 				<button 
 					type='submit' 
-					onClick={(event) => props.onClick(document.getElementById('guess-form').value)}>
+					onClick={(value) => props.onClick(document.getElementById('guess-form').value)}>
 					Submit
 				</button>
 		</form>

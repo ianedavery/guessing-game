@@ -15,13 +15,11 @@ export default class Layout extends React.Component {
 
 	handleClick(value) {
 		this.setState({ valueArray: [...this.state.valueArray, value] });
-		this.setState({recentGuess: value});		
-	}
-
-	changeRecentGuess(recentGuess) {
-		this.setState({
-			recentGuess: this.recentGuess
-		});
+		this.setState({recentGuess: value});
+		function clear() {
+			document.getElementById('guess-form').value = '';
+		}	
+		clear();	
 	}
 
 	handleNewGame() {
