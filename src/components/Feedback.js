@@ -10,10 +10,10 @@ export default function Feedback(props) {
 			{props.recentGuess == props.randomNumber &&
 				<h2>Correct</h2>
 			}
-			{absGuess < 3 && absGuess > 0 && recentGuess != 0 &&
+			{absGuess < 3 && absGuess > 0 && recentGuess !== 0 &&
 				<h2>Hot</h2>
 			}
-			{absGuess > 2 && absGuess < 11 && recentGuess != 0 &&
+			{absGuess > 2 && absGuess < 11 && recentGuess !== 0 &&
 				<h2>Cold</h2>
 			}
 		</div>
