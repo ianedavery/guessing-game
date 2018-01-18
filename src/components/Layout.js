@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Input from './Input';
 import Output from './Output';
+import Newgame from './Newgame';
 
 export default class Layout extends React.Component {
 	constructor(props) {
@@ -23,17 +24,19 @@ export default class Layout extends React.Component {
 		});
 	}
 
-	onSubmit(event) {
-		event.preventDefault();
-		return false;
+	handleNewGame() {
+		this.setState({ valueArray: [] });
+		this.setState({ recentGuess: 0 });
+		this.setState({ randomNumber: Math.floor(Math.random() * 10) + 1 });
 	}
 
 	render() {
 		return(
 			<div>
 				<Header />
-				<Input min={1} max={10} onClick={value => this.handleClick(value)} onSubmit={event => this.onSubmit(event)} />
+				<Input min={1} max={10} onClick={value => this.handleClick(value)} onSubmit={event => event.preventDefault()} />
 				<Output valueArray={this.state.valueArray} randomNumber={this.state.randomNumber} recentGuess={this.state.recentGuess} />
+				<Newgame onClick={() => this.handleNewGame()} />
 			</div>
 		);	
 	}

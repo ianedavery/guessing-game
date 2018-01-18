@@ -5,7 +5,7 @@ export default function Output(props) {
 	return(
 		<div>
 			<Feedback randomNumber={props.randomNumber} recentGuess={props.recentGuess} />
-			<div>Your Guesses {props.valueArray}</div>
+			<div>Your Guesses {props.valueArray + ' '}</div>
 		</div>
 	);
 }

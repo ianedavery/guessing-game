@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Input(props) {
 	return(
-		<form onSubmit={event => props.onSubmit(event)} >
+		<form onSubmit={event => event.preventDefault()} >
 			<fieldset>
 				<label aria-label='guess-form' />
 				<input id='guess-form' type='number' min={props.min} max={props.max} placeholder='Guess a number' />
