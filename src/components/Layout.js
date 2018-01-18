@@ -23,11 +23,16 @@ export default class Layout extends React.Component {
 		});
 	}
 
+	onSubmit(event) {
+		event.preventDefault();
+		return false;
+	}
+
 	render() {
 		return(
 			<div>
 				<Header />
-				<Input min={1} max={10} onClick={value => this.handleClick(value)} />
+				<Input min={1} max={10} onClick={value => this.handleClick(value)} onSubmit={event => this.onSubmit(event)} />
 				<Output valueArray={this.state.valueArray} randomNumber={this.state.randomNumber} recentGuess={this.state.recentGuess} />
 			</div>
 		);	
