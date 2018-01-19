@@ -30,12 +30,12 @@ export default class Layout extends React.Component {
 
 	render() {
 		return(
-			<div>
+			<main className='main'>
 				<Header />
 				<Input min={1} max={10} onClick={value => this.handleClick(value)} onSubmit={event => event.preventDefault()} />
 				<Output valueArray={this.state.valueArray} randomNumber={this.state.randomNumber} recentGuess={this.state.recentGuess} />
 				<Newgame onClick={() => this.handleNewGame()} />
-			</div>
+			</main>
 		);	
 	}
 }

@@ -6,15 +6,15 @@ export default function Feedback(props) {
 	const absGuess = Math.abs(randomNumber - recentGuess);
 	console.log(absGuess);
 	return (
-		<div> 
+		<div className='feedback-wrapper'> 
 			{props.recentGuess == props.randomNumber &&
-				<h2>Correct</h2>
+				<h3 className='feedback'>Correct</h3>
 			}
 			{absGuess < 3 && absGuess > 0 && recentGuess !== 0 &&
-				<h2>Hot</h2>
+				<h3 className='feedback'>Hot</h3>
 			}
 			{absGuess > 2 && absGuess < 11 && recentGuess !== 0 &&
-				<h2>Cold</h2>
+				<h3 className='feedback'>Cold</h3>
 			}
 		</div>
 	);
